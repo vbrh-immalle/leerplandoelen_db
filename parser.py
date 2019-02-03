@@ -9,39 +9,37 @@ def parse_line(line):
     match = re_competentie.match(line)
     if match:
         c = models.Competentie()
-        c.nummer = match.group(1)
-        c.omschrijving = match.group(2)
+        c.nummer = match.group(1).strip()
+        c.omschrijving = match.group(2).strip()
         return c
         
     match = re_deelcompetentie.match(line)
     if match:
         d = models.Deelcompetentie()
-        d.nummer = match.group(1)
-        d.omschrijving = match.group(2)
+        d.nummer = match.group(1).strip()
+        d.omschrijving = match.group(2).strip()
+        d.competentie = d.nummer.split('.')[0]
         return d
         
     match = re_leerplandoel.match(line)
     if match:
         l = models.Leerplandoel()
-        l.nummer = match.group(1)
-        l.omschrijving = match.group(2)
+        l.nummer = match.group(1).strip()
+        l.omschrijving = match.group(2).strip()
+        l.competentie = l.nummer.split('.')[0]
+        l.deelcompetentie = l.nummer.split('.')[1]
         return l
     
     return None
 
 
-if __name__ == '__main__':
-    print("hello")
+def parse_leerplandoelentekst():
     leerplanonderdelen = []
+    
     with open('leerplandoelen_text.txt', 'r') as f:
         for line in f:
             r = parse_line(line)
             if r:
                 leerplanonderdelen.append(r)
-    
-    for lpo in leerplanonderdelen:
-        print(type(lpo))
-        print(lpo.nummer)
-        print(lpo.omschrijving)
 
-            
+    return leerplanonderdelen
