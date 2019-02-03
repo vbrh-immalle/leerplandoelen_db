@@ -1,4 +1,5 @@
 import re
+import models
 
 def parse_line(line):
     re_competentie = re.compile(r'^Competentie ([0-9]+) - (.+)')
@@ -7,22 +8,35 @@ def parse_line(line):
 
     match = re_competentie.match(line)
     if match:
-        print("C")
-        print(match.group(1, 2))
-
+        c = models.Competentie()
+        c.nummer = match.group(1)
+        c.omschrijving = match.group(2)
+        return c
+        
     match = re_deelcompetentie.match(line)
     if match:
-        print("  D")
-        print(match.group(1, 2))
-
+        d = models.Deelcompetentie()
+        d.nummer = match.group(1)
+        d.omschrijving = match.group(2)
+        return d
+        
     match = re_leerplandoel.match(line)
     if match:
-        print("    L")
-        print(match.group(1, 2))
+        l = models.Leerplandoel()
+        l.nummer = match.group(1)
+        l.omschrijving = match.group(2)
+        return l
+    
+    return None
 
 
 if __name__ == '__main__':
     print("hello")
     with open('leerplandoelen_text.txt', 'r') as f:
         for line in f:
-            parse_line(line)
+            r = parse_line(line)
+            if r:
+                print(type(r))
+                print(r.nummer)
+                print(r.omschrijving)
+            
