@@ -1,15 +1,14 @@
 
-class Base:
+class Leerplanonderdeel:
     def init(self):
         self.nummer = ""
         self.omschrijving = ""
 
-class Competentie(Base):
+class Competentie(Leerplanonderdeel):
     pass
     
-
-class Deelcompetentie(Base):
+class Deelcompetentie(Leerplanonderdeel):
     pass
 
-class Leerplandoel(Base):
+class Leerplandoel(Leerplanonderdeel):
     pass

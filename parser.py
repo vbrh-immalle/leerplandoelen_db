@@ -32,11 +32,16 @@ def parse_line(line):
 
 if __name__ == '__main__':
     print("hello")
+    leerplanonderdelen = []
     with open('leerplandoelen_text.txt', 'r') as f:
         for line in f:
             r = parse_line(line)
             if r:
-                print(type(r))
-                print(r.nummer)
-                print(r.omschrijving)
+                leerplanonderdelen.append(r)
+    
+    for lpo in leerplanonderdelen:
+        print(type(lpo))
+        print(lpo.nummer)
+        print(lpo.omschrijving)
+
             
