@@ -1,6 +1,6 @@
 import sqlite3
 import models
-import parser
+import leerplanparser
 import os
 
 db_filename = 'leerplandoelen_db.sqlite3'
@@ -16,7 +16,7 @@ def create_db():
     c.execute("CREATE TABLE Deelcompetenties(nummer text primary key, omschrijving text, competentie text)")
     c.execute("CREATE TABLE Leerplandoelen(nummer text primary key, omschrijving text, competentie text, deelcompetentie text)")
     
-    leerplanonderdelen = parser.parse_leerplandoelentekst()
+    leerplanonderdelen = leerplanparser.parse_leerplandoelentekst()
 
     for lpo in leerplanonderdelen:
         print(lpo.getInsertCommand())
