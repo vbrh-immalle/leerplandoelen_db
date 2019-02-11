@@ -175,9 +175,7 @@ Deelcompetentie 2.2 - Een client besturingssysteem installeren, configureren en 
 
 2.2.11 Bij probleemsituaties tijdens het opstartproces gericht ingrijpen. 
 
-2.2.12 Belangrijke waarden in bios interpreteren en eventueel wijzigen bijvoorbeeld 
-
-opstartvolgorde, in- en uitschakelen van onboard apparatuur, wachtwoord instellen. 
+2.2.12 Belangrijke waarden in bios interpreteren en eventueel wijzigen bijvoorbeeld opstartvolgorde, in- en uitschakelen van onboard apparatuur, wachtwoord instellen. 
 
 2.2.13 Maatregelen om het verbruik van een computersysteem te beperken toelichten en uitvoeren.  
 
