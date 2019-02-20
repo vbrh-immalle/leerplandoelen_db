@@ -3,7 +3,7 @@ import models
 import leerplanparser
 import os
 
-db_filename = 'leerplandoelen_db.sqlite3'
+db_filename = '../leerplandoelen_db.sqlite3'
 
 def create_db():
     conn = sqlite3.connect(db_filename)

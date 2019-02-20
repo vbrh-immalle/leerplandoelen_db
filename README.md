@@ -1,27 +1,17 @@
-# Leerplandoelen_db
+# Parser
 
-`parser.py` maakt gebruik van **regular expressions** om de input-file `leerplandoelen_text.txt` te parsen.
-Er werden Model-classes aangemaakt zodat de parser-code gescheiden kon blijven van de database-code.
+De parser is een tool om een tekst-file met leerplandoelen om te zetten naar een sqlite-databank:
 
-Als oef. kan je:
+https://github.com/vbrh-immalle/leerplandoelen_db/parser
 
-- deze Model-classes verwijderen en rechtstreeks in de parser de database aanspreken
-- i.p.v. regular expressions, kan je ook de standaard string-functies van Python gebruiken
+De parser maakt ook de rest van het database-schema aan met wat test-data:
 
+- de tabel `User`
+- de tabel `Antwoorden`
 
-# Opmerkingen
+# Querytester
 
-In (X)Ubuntu:
+De querytester is een tool om de op de CLI vanuit Python queries te testen:
 
-- `sudo apt install sqlite` om nadien de gemaakte database te kunnen testen met `sqlite3`
-- `python3` om `create_db.py` uit te voeren (er wordt geen gebruikt gemaakt van `pip` omdat enkel standard libraries gebruikt worden)
+https://github.com/vbrh-immalle/leerplandoelen_db/querytester
 
-
-# SQL
-
-Als oef. kan je:
-
-- extra queries schrijven om test-data toe te voegen
-- een query schrijven die alle antwoorden van een bepaald leerplandoel opvraagt
-- een query schrijven die alle antwoorden van een bepaalde gebruiker opvraagt
-- ...
