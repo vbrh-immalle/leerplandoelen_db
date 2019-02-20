@@ -2,7 +2,7 @@
 
 De parser is een tool om een tekst-file met leerplandoelen om te zetten naar een sqlite-databank:
 
-https://github.com/vbrh-immalle/leerplandoelen_db/parser
+[Parser](parser/README.md)
 
 De parser maakt ook de rest van het database-schema aan met wat test-data:
 
@@ -13,5 +13,4 @@ De parser maakt ook de rest van het database-schema aan met wat test-data:
 
 De querytester is een tool om de op de CLI vanuit Python queries te testen:
 
-https://github.com/vbrh-immalle/leerplandoelen_db/querytester
-
+[Querytester](querytester/README.md)
