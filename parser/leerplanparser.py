@@ -1,5 +1,6 @@
 import re
 import models
+import config
 
 def parse_line(line):
     re_competentie = re.compile(r'^Competentie ([0-9]+) - (.+)')
@@ -36,7 +37,7 @@ def parse_line(line):
 def parse_leerplandoelentekst():
     leerplanonderdelen = []
     
-    with open('leerplandoelen_text.txt', 'r') as f:
+    with open(config.src_filename, 'r') as f:
         for line in f:
             r = parse_line(line)
             if r:

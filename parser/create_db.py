@@ -2,11 +2,10 @@ import sqlite3
 import models
 import leerplanparser
 import os
-
-db_filename = '../leerplandoelen_db.sqlite3'
+import config
 
 def create_db():
-    conn = sqlite3.connect(db_filename)
+    conn = sqlite3.connect(config.db_filename)
     
     c = conn.cursor()
     
@@ -37,7 +36,7 @@ def create_db():
     
 
 if __name__ == '__main__':
-    if os.path.isfile(db_filename):
-        os.remove(db_filename)
+    if os.path.isfile(config.db_filename):
+        os.remove(config.db_filename)
     create_db()
     
