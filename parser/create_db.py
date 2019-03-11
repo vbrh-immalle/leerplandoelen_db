@@ -37,6 +37,12 @@ def create_db():
 
 if __name__ == '__main__':
     if os.path.isfile(config.db_filename):
-        os.remove(config.db_filename)
+        import ui
+        q = f"{config.db_filename} already exists. Do you want to remove it?"
+        if ui.yes_or_no(question=q, default=False):
+            os.remove(config.db_filename)
+        else:
+            print("Quitting program: not generating db again.")
+            exit()
     create_db()
     
