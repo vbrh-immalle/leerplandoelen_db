@@ -69,3 +69,8 @@ sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in
 Een eenvoudige oplossing is om bij elk request de database-connectie opnieuw te openen
 maar dit is eigenlijk niet aangewezen o.w.v. performantie.
 
+Een betere oplossing is gebruik te maken van het speciale `g`-object dat Flask voorziet.
+Dit is een variabele die voor elk request opnieuw gemaakt wordt. Het wordt hier gebruikt
+om de database-connectie in op te slaan zodat voor elk request maar 1 connectie met de
+database nodig is.
+

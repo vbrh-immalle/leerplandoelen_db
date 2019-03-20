@@ -1,11 +1,16 @@
 import sqlite3
 import models
+from flask import g
 
 db_filename = '../leerplandoelen_db.sqlite3'
 
+def get_db():
+    if 'conn' not in g:
+        g.conn = sqlite3.connect(db_filename)    
+    return g.conn
 
 def get_competenties():
-    conn = sqlite3.connect(db_filename)    
+    conn = get_db()
     cs = []
     for row in conn.execute("SELECT * FROM Competenties"):
         c = models.Competentie()
@@ -15,7 +20,7 @@ def get_competenties():
     return cs
 
 def get_deelcompetenties():
-    conn = sqlite3.connect(db_filename)
+    conn = get_db()
     ds = []
     for row in conn.execute("SELECT * FROM Deelcompetenties"):
         d = models.Deelcompetentie()
