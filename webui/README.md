@@ -31,6 +31,12 @@ Met het `CTRL+SHIFT+P`-commando `select linter` kan eventueel een andere linter 
 
 De gebruikte linter wordt in de `Pipfile` opgeslagen onder de hoofding `[dev-packages]`.
 
+Om de dev-packages te installeren, doe je:
+
+```
+pipenv install --dev
+```
+
 
 # Code
 
