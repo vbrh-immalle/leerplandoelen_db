@@ -6,6 +6,10 @@ Volgende instructies werden initieel uitgevoerd om o.a. de `Pipfile` te maken:
 
     pipenv install flask
 
+Om alle modules te installeren uit de pipfile, doe:
+
+    pipenv install
+
 En om uit te voeren wordt overgeschakeld naar de shell waarin alle modules uit `Pipfile` aanwezig zijn:
 
     pipenv shell
