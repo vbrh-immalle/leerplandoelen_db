@@ -1,0 +1,9 @@
+<ul>
+    {% for d in deelcompetenties %}
+    <li>
+        <span>{{d.nummer}}</span>:
+        <span>{{d.omschrijving}}</span>
+        (deelcompetentie: {{d.competentie}})
+    </li>
+    {% endfor %}
+</ul>

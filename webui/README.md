@@ -66,4 +66,6 @@ Dit geeft dan volgende error:
 sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 20584 and this is thread id 7424.
 ```
 
+Een eenvoudige oplossing is om bij elk request de database-connectie opnieuw te openen
+maar dit is eigenlijk niet aangewezen o.w.v. performantie.
 
