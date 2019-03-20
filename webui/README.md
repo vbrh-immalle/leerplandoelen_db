@@ -44,8 +44,7 @@ De route `/` returnt een string met wat HTML-code.
 
 De route `/competenties` maakt gebruik van de **database-laag** om
 objecten terug te krijgen op basis van de **model-classes**.
-Deze objecten worden dan aan een HTML-template doorgegeven waarmee we in de browser worden
-weergegeven.
+Deze objecten worden dan aan een eenvoudig HTML-template doorgegeven waarmee we in de browser de competenties weergeven.
 
 ## Database-laag
 
