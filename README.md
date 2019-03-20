@@ -14,3 +14,9 @@ De parser maakt ook de rest van het database-schema aan met wat test-data:
 De querytester is een tool om de op de CLI vanuit Python queries te testen:
 
 [Querytester](querytester)
+
+# WebUI
+
+De WebUI is een eenvoudige flask-app met eenvoudige routes om de leerplandoelen te tonen:
+
+[WebUI](webui)
