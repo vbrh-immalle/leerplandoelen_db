@@ -46,6 +46,14 @@ De route `/competenties` maakt gebruik van de **database-laag** om
 objecten terug te krijgen op basis van de **model-classes**.
 Deze objecten worden dan aan een eenvoudig HTML-template doorgegeven waarmee we in de browser de competenties weergeven.
 
+De route `/deelcompetenties` werkt gelijkaardig.
+
+De route `/competentie/<nummer>` zal alle deelcompetenties van een competentie tonen.
+Deze routes worden in het template gebruikt als doel voor hyperlinks in het competentie-overzicht!
+
+De naamgeving van de routes is bewust kort gehouden omdat dit ook verschijnt in de
+publiek zichtbare URL's.
+
 ## Database-laag
 
 In `leerplandb.py` wordt de database-laag geïmplementeerd.
@@ -55,6 +63,8 @@ en in objecten gestoken.
 De objecten worden gemaakt op basis van zogenaamde **model-classes**.
 Deze model-classes maken het werken met de data in Python gemakkelijker dan rechtstreeks
 met database-objecten te moeten werken.
+
+In de database-laag kiezen we bij voorkeur voor duidelijke (volledige) functie-namen.
 
 ## Probleem: globale variabelen
 

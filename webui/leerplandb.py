@@ -29,3 +29,14 @@ def get_deelcompetenties():
         d.competentie = row[2]
         ds.append(d)
     return ds
+
+def get_deelcompetenties_voor_competentie(nummer):
+    conn = get_db()
+    ds = []
+    for row in conn.execute("SELECT * FROM Deelcompetenties WHERE competentie = ?", (nummer,)):
+        d = models.Deelcompetentie()
+        d.nummer = row[0]
+        d.omschrijving = row[1]
+        d.competentie = row[2]
+        ds.append(d)
+    return ds

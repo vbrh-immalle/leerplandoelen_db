@@ -1,5 +1,7 @@
 <ul>
     {% for c in competenties %}
-    <li><span>{{c.nummer}}</span>:<span>{{c.omschrijving}}</span></li>
+    <li>
+        <a href="/competentie/{{c.nummer}}"><span>{{c.nummer}}</span>:<span>{{c.omschrijving}}</span></a>
+    </li>
     {% endfor %}
 </ul>

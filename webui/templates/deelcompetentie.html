@@ -1,0 +1,11 @@
+<ul>
+    <h2>Deelcompetenties van competentie {{competentienummer}}</h2>
+    {% for d in deelcompetenties %}
+    <li>
+        <span>{{d.nummer}}</span>:
+        <span>{{d.omschrijving}}</span>
+    </li>
+    {% else %}
+    <p>Er werden geen deelcompetenties gevonden voor competentie {{competentienummer}}!</p>
+    {% endfor %}
+</ul>
