@@ -3,10 +3,13 @@ import os
 
 db_filename = '../leerplandoelen_db.sqlite3'
 
-def query1():
-    conn = sqlite3.connect(db_filename)
-    c = conn.cursor()
+conn = sqlite3.connect(db_filename)
+c = conn.cursor()
 
+
+def query1():
+    global conn
+    global c
     c.execute("SELECT * FROM User")
     r = c.fetchone()
     print(r)
@@ -16,8 +19,12 @@ def query1():
     c.close()
 
 def query2():
-    pass
-
+    global conn
+    cs = []
+    for row in conn.execute("SELECT * FROM Competenties"):
+        cs.append(row)
+    print(cs)
+    
 if __name__ == '__main__':
     if os.path.isfile(db_filename):
         print("--query 1")
