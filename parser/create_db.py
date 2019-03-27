@@ -23,13 +23,16 @@ def create_db():
 
     # user data
 
-    c.execute("CREATE TABLE User(id int primary key, achternaam text, voornaam text)")
+    c.execute("CREATE TABLE Users(id int primary key, achternaam text, voornaam text)")
     c.execute("CREATE TABLE Antwoorden(id int primary key, user_id int, leerplandoel text, inhoud text, tijdstip datetime)")
 
     # user test data
 
-    c.execute("INSERT INTO User VALUES(1, 'Janssens', 'Jos')")
+    c.execute("INSERT INTO Users VALUES(1, 'Janssens', 'Jos')")
+    c.execute("INSERT INTO Users VALUES(2, 'Peeters', 'Willy')")
     c.execute("INSERT INTO Antwoorden VALUES(1, 1, '7.3.7', 'We hebben een les gegeven met de IT-Tapa.', '2019-02-06')")
+    c.execute("INSERT INTO Antwoorden VALUES(2, 1, '5.1.1', 'We weten nu dat een relationele databank een verzameling is van tabellen met relaties tussen.', '2019-03-13')")
+    c.execute("INSERT INTO Antwoorden VALUES(3, 2, '5.1.1', 'Een relationele databank is een verzameling van tabellen met relaties tussen.', '2019-03-13')")
 
     conn.commit()
     c.close()
