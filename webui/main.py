@@ -21,6 +21,9 @@ def hello():
   <li>
     <a href='/users'>Alle users</a>
   </li>
+  <li>
+    <a href='/antwoorden'>Alle antwoorden</a>
+  </li>
 </ul>
 """
 
@@ -56,5 +59,11 @@ def user(user_id):
         return f"User met id {user_id} niet gevonden!"
     antwoorden = leerplandb.get_antwoorden_from_user(user_id)
     return render_template("user_details.html", user=u, antwoorden=antwoorden)
+
+@app.route('/antwoorden')
+def antwoorden():
+    antwoorden = leerplandb.get_alle_antwoorden()
+    return render_template("antwoorden.html", antwoorden=antwoorden)
+
 
 app.run(host='localhost', port='5001', debug=True)

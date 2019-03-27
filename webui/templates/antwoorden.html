@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <th>Voornaam</th>
+        <th>Leerplandoel</th>
+        <th>Inhoud</th>
+        <th>Tijdstip</th>
+    </thead>
+    {% for a in antwoorden %}
+    <tr>
+        <td>{{a.user.voornaam}}</td>
+        <td>{{a.antwoord.leerplandoel}}</td>
+        <td>{{a.antwoord.inhoud}}</td>
+        <td>{{a.antwoord.tijdstip}}</td>
+    </tr>
+    {% endfor %}
+</table>

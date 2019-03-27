@@ -69,7 +69,7 @@ def get_users():
 
 def get_user(id):
     conn = get_db()
-    cursor = conn.execute("SELECT * FROM Users WHERE id = ?", (id,))
+    cursor = conn.execute("SELECT * FROM Users WHERE id = ?", tuple(id))
     row = cursor.fetchone()
     if not row:
         return None
@@ -78,6 +78,23 @@ def get_user(id):
     u.achternaam = row[1]
     u.voornaam = row[2]
     return u
+
+
+def get_alle_antwoorden():
+    conn = get_db()
+    antwoorden = []
+    for row in conn.execute("SELECT * FROM Users JOIN Antwoorden on Users.id = Antwoorden.user_id"):
+        avm = models.MyObject()
+        avm.user = models.User()
+        avm.antwoord = models.Antwoord()
+        avm.user.id = row[0]
+        avm.user.achternaam = row[1]
+        avm.user.voornaam = row[2]
+        avm.antwoord.leerplandoel = row[5]
+        avm.antwoord.inhoud = row[6]
+        avm.antwoord.tijdstip = row[7]
+        antwoorden.append(avm)
+    return antwoorden
 
 
 def get_antwoorden(leerplannummer):
@@ -102,3 +119,4 @@ def get_antwoorden_from_user(user_id):
         a.tijdstip = row[4]
         antwoorden.append(a)
     return antwoorden
+

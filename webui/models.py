@@ -33,3 +33,7 @@ class Antwoord:
         self.leerplandoel = Leerplandoel()
         self.inhoud = ""
         self.tijdstip = datetime(1, 1, 1, 0, 0)
+
+
+class MyObject:
+    pass
