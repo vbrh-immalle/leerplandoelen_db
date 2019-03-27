@@ -15,6 +15,12 @@ def hello():
   <li>
     <a href='/deelcompetenties'>Alle deelcompetenties</a>
   </li>
+  <li>
+    <a href='/leerplandoelen'>Alle leerplandoelen</a>
+  </li>
+  <li>
+    <a href='/users'>Alle users</a>
+  </li>
 </ul>
 """
 
@@ -33,5 +39,22 @@ def competentie(nummer):
     ds = leerplandb.get_deelcompetenties_voor_competentie(nummer)
     return render_template("deelcompetentie.html", competentienummer=nummer, deelcompetenties=ds)
 
+@app.route('/leerplandoelen')
+def leerplandoelen():
+    ls = leerplandb.get_leerplandoelen()
+    return render_template("leerplandoelen.html", leerplandoelen=ls)
+
+@app.route('/users')
+def users():
+    us = leerplandb.get_users()
+    return render_template("users.html", users=us)
+
+@app.route('/user/<user_id>')
+def user(user_id):
+    u = leerplandb.get_user(user_id)
+    if u is None:
+        return f"User met id {user_id} niet gevonden!"
+    antwoorden = leerplandb.get_antwoorden_from_user(user_id)
+    return render_template("user_details.html", user=u, antwoorden=antwoorden)
 
 app.run(host='localhost', port='5001', debug=True)

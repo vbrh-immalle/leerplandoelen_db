@@ -1,0 +1,11 @@
+<ul>
+    {% for u in users %}
+    <li>
+        <a href="/user/{{u.id}}">
+            <span>{{u.id}}</span>:
+            <span>{{u.achternaam}}</span>
+            <span>{{u.voornaam}}</span>
+        </a>
+    </li>
+    {% endfor %}
+</ul>

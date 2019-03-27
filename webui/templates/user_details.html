@@ -1,0 +1,20 @@
+<dl>
+    <dt>Id</dt>
+    <dd>{{ user.id }}</dd>
+    <dt>Achternaam</dt>
+    <dd>{{ user.achternaam }}</dd>
+    <dt>Voornaam</dt>
+    <dd>{{ user.voornaam }}</dd>    
+    <dt>Aantal antwoorden</dt>
+    <dd>{{ antwoorden | length }}</dd>
+</dl>
+
+<ul>
+    {% for a in antwoorden %}
+    <li>
+        <span>{{ a.leerplandoel }}</span>
+        <span>{{ a.inhoud }}</span>
+        <span>{{ a.tijdstip }}</span>
+    </li>
+    {% endfor %}
+</ul>
