@@ -6,6 +6,10 @@ Volgende instructies werden initieel uitgevoerd om o.a. de `Pipfile` te maken:
 
     pipenv install flask
 
+Om alle modules te installeren uit de pipfile, doe:
+
+    pipenv install
+
 En om uit te voeren wordt overgeschakeld naar de shell waarin alle modules uit `Pipfile` aanwezig zijn:
 
     pipenv shell
@@ -26,6 +30,12 @@ De gekozen linter wordt enkel gebruikt in de gekozen Pipenv-omgeving en dus gedo
 Met het `CTRL+SHIFT+P`-commando `select linter` kan eventueel een andere linter gekozen worden.
 
 De gebruikte linter wordt in de `Pipfile` opgeslagen onder de hoofding `[dev-packages]`.
+
+Om de dev-packages te installeren, doe je:
+
+```
+pipenv install --dev
+```
 
 
 # Code
